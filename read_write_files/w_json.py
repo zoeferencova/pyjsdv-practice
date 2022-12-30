@@ -18,12 +18,12 @@ nobel_winners = [
      'year': 1911}
 ]
 
-with open('data/nobel_winners.json', 'w', encoding="utf-8") as f:
+with open('../data/nobel_winners.json', 'w', encoding="utf-8") as f:
     # takes python container and file pointer, saves container contents to file
     json.dump(nobel_winners, f)
 
 # open and load json file
-with open('data/nobel_winners.json', encoding="utf-8") as f:
+with open('../data/nobel_winners.json', encoding="utf-8") as f:
     nobel_winners = json.load(f)
 
 print(nobel_winners)

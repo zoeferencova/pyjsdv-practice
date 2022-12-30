@@ -20,7 +20,7 @@ nobel_winners = [
 
 
 # create new file, indicate we will be writing to it using 'w'
-with open('data/nobel_winners.csv', 'w', encoding="utf-8") as f:
+with open('../data/nobel_winners.csv', 'w', encoding="utf-8") as f:
     # get column headers from dict keys and sort alphabetically
     fieldnames = nobel_winners[0].keys()
     fieldnames = sorted(fieldnames)
@@ -33,7 +33,7 @@ with open('data/nobel_winners.csv', 'w', encoding="utf-8") as f:
         writer.writerow(w)
 
 # open csv file
-with open('data/nobel_winners.csv', encoding="utf-8") as f:
+with open('../data/nobel_winners.csv', encoding="utf-8") as f:
     # initialize reader
     reader = csv.reader(f)
     # print each row to display in readable format
@@ -41,7 +41,7 @@ with open('data/nobel_winners.csv', encoding="utf-8") as f:
         print(row)
 
 # open csv file as a dictionary of rows
-with open('data/nobel_winners.csv', encoding="utf-8") as f:
+with open('../data/nobel_winners.csv', encoding="utf-8") as f:
     # create list of dictionaries (preferred)
     reader = csv.DictReader(f)
     nobel_winners = list(reader)
