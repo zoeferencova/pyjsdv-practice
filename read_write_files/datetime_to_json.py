@@ -4,11 +4,11 @@ import json
 
 # subclass a JSONEncoder to create custom date-handling one
 class JSONDateTimeEncoder(json.JSONEncoder):
-    def default(self, obj):
+    def default(self, o):
         # tests for datetime obj and returns isoformat if true
-        if isinstance(obj, (datetime.date, datetime.datetime)):
-            return obj.isoformat()
-        return json.JSONEncoder.default(self, obj)
+        if isinstance(o, (datetime.date, datetime.datetime)):
+            return o.isoformat()
+        return json.JSONEncoder.default(self, o)
 
 
 def dumps(obj):
