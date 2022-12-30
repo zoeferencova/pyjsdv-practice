@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- A few CSS style rules -->
+<style>
+    svg#chart {
+        background: lightgray;
+        font-family: sans-serif;
+    }
+
+    #chart path {
+        stroke: red;
+        fill: none;
+    }
+</style>
+
+<svg id="chart" width="300" height="150">
+    <!-- Having moved to position (40, 40), draw elliptical arc with x-radius 30, y-radius 40, and endpoint (80, 80) -->
+    <!-- First flag (0) sets x-axis rotation, last two flax (0, 1) are large-arc-flag, specifying which arc of the ellipse to use, 
+        and sweep-flag, which specifies which of the two possible ellipses definedby start and endpoints to use -->
+    <path d="M40 40
+        A30 40 
+        0 0 1 
+        80 80
+        A50 50  0 0 1  160  80
+        A30 30  0 0 1  190  80
+    ">
+</svg>

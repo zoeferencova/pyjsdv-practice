@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- A few CSS style rules -->
+<style>
+    svg#chart {
+        background: lightgray;
+        font-family: sans-serif;
+    }
+
+    #chart circle {
+        fill: lightblue
+    }
+
+    #chart line {
+        stroke: #555555;
+        stroke-width: 2;
+    }
+
+    #chart rect {
+        fill: white;
+        stroke: red;
+    }
+
+    #chart polygon {
+        fill: green
+    }
+
+    #chart text {
+        font-size: 12px;
+    }
+
+    #chart text#title {
+        font-size: 15px;
+    }
+</style>
+
+<svg id="chart" width="300" height="225">
+    <!-- r: radius, cx: px from left to center, cy: px from top to center -->
+    <circle r="15" cx="100" cy="50"></circle>
+
+    <!-- x1, y1: start coordinates on x & y axes, x2, y2: end coordinates on x & y axes -->
+    <line x1="20" y1="20" x2="20" y2="130"></line>
+    <line x1="20" y1="130" x2="280" y2="130"></line>
+
+    <rect x="240" y="5" width="55" height="30"></rect>
+
+    <!-- takes list of coordinate pairs -->
+    <polygon points="210,100, 230,100, 220,80"></polygon>
+
+    <!-- text-anchor: position of text relative to x -->
+    <text id="title" text-anchor="middle" x="150" y="20">Dummy Chart</text>
+
+    <!-- rotate(rotation, x origin, y origin), dy: shift along y axis -->
+    <text x="20" y="20" transform="rotate(-90,20,20)" text-anchor="end" dy="1em">y axis label</text>
+
+    <!-- M20 130: move coordinate (20, 130), L60 70: draw line to (60, 70) -->
+    <!-- imagine d as a set of instructions to a pen to move to a point with M raising the pen from the canvas -->
+    <path d="M20 130L60 70L110 100L160 45"></path>
+</svg>
+
+<svg id="chart" width="300" height="150">
+    <rect width="20" height="40" transform="translate(60, 55)" fill="blue" />
+    <rect width="20" height="40" transform="translate(120, 55), rotate(45)" fill="blue" />
+    <rect width="20" height="40" transform="translate(180, 55), scale(0.5)" fill="blue" />
+    <rect width="20" height="40" transform="translate(240, 55), rotate(45), scale(0.5)" fill="blue" />
+</svg>
