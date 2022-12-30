@@ -61,7 +61,10 @@ print(list(res))
 # turn mongodb collection into Python list of dictionaries
 # empty query dict {} finds all documents in collection
 # del_id removes MongoDB's ObjectId from items by default
-def mongo_coll_to_dicts(dbname='test', collname='test', query={}, del_id=True, **kw):
+def mongo_coll_to_dicts(dbname='test', collname='test', query=None, del_id=True, **kw):
+    if not query:
+        query = {}
+
     database = get_mongo_database(dbname, **kw)
     response = list(database[collname].find(query))
 
