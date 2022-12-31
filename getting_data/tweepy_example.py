@@ -1,13 +1,12 @@
 import tweepy
-import json
 
-consumer_key = 'secret'
-consumer_secret = 'secret'
-access_token = 'secret'
-access_token_secret = 'secret'
+CONSUMER_KEY = 'secret'
+CONSUMER_SECRET = 'secret'
+ACCESS_TOKEN = 'secret'
+ACCESS_TOKEN_SECRET = 'secret'
 
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, access_token_secret)
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 
 api = tweepy.API(auth)
 
@@ -19,31 +18,30 @@ for tweet in public_tweets:
 my_follower_ids = api.get_follower_ids()
 
 followers_tree = {'followers': []}
-for id in my_follower_ids:
+for user_id in my_follower_ids:
     # get the followers of your followers
     try:
-        follower_ids = api.get_follower_ids(user_id=id)
+        follower_ids = api.get_follower_ids(user_id=user_id)
     except tweepy.errors.Unauthorized:
-        print("Unauthorized to access user %d's followers"
-              % (id))
+        print(f"Unauthorized to access user {user_id}'s followers")
 
     followers_tree['followers'].append(
-        {'id': id, 'follower_ids': follower_ids})
+        {'id': user_id, 'follower_ids': follower_ids})
 
 
 # stream example
 class MyStream(tweepy.Stream):
     """ Customized tweet stream """
 
-    def on_data(self, tweet):
+    def on_data(self, raw_data):
         """Do something with the tweet data..."""
-        print(tweet)
+        print(raw_data)
 
-    def on_error(self, status):
+    def on_error(self):
         return True  # keep stream open
 
 
-stream = MyStream(consumer_key, consumer_secret,
-                  access_token, access_token_secret)
+stream = MyStream(CONSUMER_KEY, CONSUMER_SECRET,
+                  ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
 # Start the stream with track list of keywords
 stream.filter(track=['python', 'javascript', 'dataviz'])

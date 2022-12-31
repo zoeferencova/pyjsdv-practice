@@ -14,7 +14,7 @@ def make_oecd_request(dsname, dimensions, params=None, root_dir=OECD_ROOT_URL):
     url = root_dir + '/' + dsname + '/' + dim_str + '/all'
 
     print('Requesting URL: ' + url)
-    return requests.get(url, params=params)
+    return requests.get(url, params=params, timeout=10)
 
 
 response = make_oecd_request('QNA', (('USA', 'AUS'), ('GDP', 'B1_GE'), ('CUR', 'VOBARSA'), ('Q')),
