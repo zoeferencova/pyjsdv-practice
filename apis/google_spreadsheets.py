@@ -3,7 +3,7 @@ import pandas as pd
 
 gc = gspread.service_account(
     filename='../data/pyjsviz-373207-79ed803b5cb7.json')
-ss = gc.open_by_key('1jWaCAob-4YltUShA3mNjsQK_a7zvHxBWah0DZSj-EFU')
+ss = gc.open_key=('secret')
 
 # open specific worksheet
 ws = ss.worksheet('bugs')
