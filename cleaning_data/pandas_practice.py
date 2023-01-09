@@ -254,5 +254,5 @@ pd.Series(9, {'a', 'b', 'c'})
 # join series together
 names = pd.Series(['Albert Einstein', 'Marie Curie'], name='name')
 categories = pd.Series(['Physics', 'Chemistry'], name='category')
-
+# axis = 1 indicates that series are columns
 df = pd.concat([names, categories], axis=1)
