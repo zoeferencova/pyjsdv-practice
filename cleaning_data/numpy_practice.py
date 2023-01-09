@@ -12,7 +12,8 @@ print(a + a)
 # shape (shape), and numeric type (dtype)
 
 def print_array_details(arr):
-    print(f'Dimensions: {arr.ndim}, shape: {arr.shape}, dtype: {a.dtype}')
+    print(
+        f'Dimensions: {arr.ndim}, shape: {arr.shape}, dtype: {arr.dtype}')
 
 
 a = np.array([1, 2, 3, 4, 5, 6, 7, 8])
@@ -178,15 +179,15 @@ np.cumsum(a)  # without axis argument, array is flattened
 # custom array function exercise: moving average
 # moving average is a series of averages based on a moving window of the last n values where n is a variable
 
-arr = np.arange(6)
+a = np.arange(6)
 # array([0, 1, 2, 3, 4, 5])
 
 
 # function receives array a and number n specifying size of moving window
-def moving_average(a, n=3):
+def moving_average(arr, n=3):
     # use built in cumsum function to calculate cumulative sum of array
     # ret = array([0, 1, 3, 6, 10, 15])
-    ret = np.cumsum(a, dtype=float)
+    ret = np.cumsum(arr, dtype=float)
     # starting at nth index of cumsum array, subtract i-nth value for all i
     # i now has the sum of the last n values of a, inclusive
     # ret = array([0, 1, 3, 6, 9, 12])

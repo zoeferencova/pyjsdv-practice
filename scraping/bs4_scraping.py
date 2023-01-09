@@ -10,7 +10,7 @@ HEADERS = {'User-Agent': 'Mozilla/5.0'}
 # expiration is set in order to get rid of old data
 # data is updated next time there is a request for the data from a user
 requests_cache.install_cache(
-    'data/nobel_pages', backend='sqlite', expire_after=7200)
+    '../data/nobel_pages', backend='sqlite', expire_after=7200)
 
 
 def get_nobel_soup():
