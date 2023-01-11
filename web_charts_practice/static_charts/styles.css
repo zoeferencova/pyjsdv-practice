@@ -1,0 +1,41 @@
+html,
+body {
+    height: 100%;
+}
+
+.main {
+    padding: 10px;
+    padding-bottom: 100px;
+    min-width: 800px;
+    max-width: 1200px;
+}
+
+.container {
+    display: flex;
+}
+
+.chart-wrapper {
+    display: flex;
+    flex: 2;
+}
+
+.chart {
+    flex: 1;
+    padding: 0 1.5em;
+}
+
+.chart img {
+    max-height: 600px;
+}
+
+.info-box {
+    flex: 1;
+    padding: 0 1.5em;
+}
+
+/* When the browser is 1000 pixels wide or less */
+@media screen and (max-width: 1000px) {
+    #by-country-container {
+        flex-direction: column-reverse;
+    }
+}

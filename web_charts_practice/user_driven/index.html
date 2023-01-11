@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="styles.css">
+<div class="main">
+    <h1 class='title'>The Nobel Prize</h1>
+    <h2>From notebook to the web with Plotly</h2>
+
+    <!-- ... -->
+    <div class="container">
+        <!-- ... -->
+        <div class="chart-wrapper">
+            <div class='chart' id='violin-group'> </div>
+        </div>
+    </div>
+
+    <div id="chart-controls">
+
+        <div id="nobel-group-select-holder">
+            <label for="nobel-group">Group:</label>
+            <select name="nobel-group" id="nobel-group"></select>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.plot.ly/plotly-2.9.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.4.2/d3.min.js"></script>
+<script src="scripts/index.js"></script>
